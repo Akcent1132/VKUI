@@ -269,6 +269,7 @@ class ModalRootTouchComponent extends React.Component<
     }
 
     const nextModalState = this.getModalState(this.props.activeModal);
+    if(!nextModalState  && id == 'filters' ) prevModalState.translateY = 25;
     const nextIsPage = !!nextModalState && nextModalState.type === ModalType.PAGE;
 
     const prevIsPage = !!prevModalState && prevModalState.type === ModalType.PAGE;
