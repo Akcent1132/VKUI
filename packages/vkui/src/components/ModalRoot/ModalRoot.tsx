@@ -271,6 +271,8 @@ class ModalRootTouchComponent extends React.Component<
     const nextModalState = this.getModalState(this.props.activeModal);
     const nextIsPage = !!nextModalState && nextModalState.type === ModalType.PAGE;
 
+    if (!nextModalState) prevModalState.translateY = 25;
+
     const prevIsPage = !!prevModalState && prevModalState.type === ModalType.PAGE;
     this.waitTransitionFinish(prevModalState, () => this.props.onExited(id));
     const exitTranslate =
